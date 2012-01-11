@@ -42,6 +42,7 @@ module MARC
     #   record.find { |f| f['245'] =~ /Huckleberry/ }
 
     def each 
+      @handle.rewind
       # while there is data left in the file
       while rec_length_s = @handle.read(5)
         # make sure the record length looks like an integer
