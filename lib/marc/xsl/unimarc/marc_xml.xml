@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<record>
+	<leader>01813nam  22002893  4500</leader>
+	<controlfield tag='001'>2378</controlfield>
+	<controlfield tag='005'>20071119125606.0</controlfield>
+	<datafield tag='100' ind1=' ' ind2=' '>
+		<subfield code='a'>19991217d1995    |||y0Grey50      ba</subfield>
+	</datafield>
+	<datafield tag='101' ind1='z' ind2=' '>
+		<subfield code='a'>gre</subfield>
+	</datafield>
+	<datafield tag='200' ind1='1' ind2=' '>
+		<subfield code='a'>20 χρόνια Θέματα εισαγωγικών εξετάσεων</subfield>
+		<subfield code='e'>Ειδική έκδοση για τα είκοσι χρόνια του Μεθοδικού. 4η Δέσμη</subfield>
+		<subfield code='e'>Μαθηματικά - Πολ. Οικονομία - Ιστορία. 1975-1995.</subfield>
+	</datafield>
+	<datafield tag='210' ind1=' ' ind2=' '>
+		<subfield code='a'>Αθήνα</subfield>
+		<subfield code='c'>Μεθοδικό Φροντιστήριο</subfield>
+		<subfield code='d'>1995</subfield>
+	</datafield>
+	<datafield tag='215' ind1=' ' ind2=' '>
+		<subfield code='a'>174 σ.</subfield>
+		<subfield code='c'>φωτ.</subfield>
+		<subfield code='d'>21 εκ.</subfield>
+	</datafield>
+	<datafield tag='606' ind1=' ' ind2=' '>
+		<subfield code='3'>__ΕΙΣΑΓΩΓΙΚΕΣ ΕΞΕΤΑΣΕΙΣ</subfield>
+		<subfield code='a'>Εισαγωγικές εξετάσεις</subfield>
+	</datafield>
+	<datafield tag='606' ind1=' ' ind2=' '>
+		<subfield code='3'>__ΘΕΜΑΤΑ ΕΞΕΤΑΣΕΩΝ</subfield>
+		<subfield code='a'>Θέματα εξετάσεων</subfield>
+	</datafield>
+	<datafield tag='606' ind1=' ' ind2=' '>
+		<subfield code='3'>ΙΣΤΟΡΙΑ</subfield>
+		<subfield code='a'>Ιστορία</subfield>
+	</datafield>
+	<datafield tag='606' ind1=' ' ind2=' '>
+		<subfield code='3'>__ΜΑΘΗΜΑΤΙΚΑ</subfield>
+		<subfield code='a'>Μαθηματικά</subfield>
+	</datafield>
+	<datafield tag='606' ind1=' ' ind2=' '>
+		<subfield code='3'>__ΠΑΝΕΛΛΑΔΙΚΕΣ ΕΞΕΤΑΣΕΙΣ,1984-1999</subfield>
+		<subfield code='a'>Πανελλαδικές εξετάσεις,1984-1999</subfield>
+	</datafield>
+	<datafield tag='606' ind1=' ' ind2=' '>
+		<subfield code='3'>__ΠΟΛΙΤΙΚΗ ΟΙΚΟΝΟΜΙΑ</subfield>
+		<subfield code='a'>Πολιτική Οικονομία</subfield>
+	</datafield>
+	<datafield tag='606' ind1=' ' ind2=' '>
+		<subfield code='3'>__ΣΧΟΛΙΚΑ ΒΟΗΘΗΜΑΤΑ ΛΥΚΕΙΟΥ</subfield>
+		<subfield code='a'>Σχολικά βοηθήματα Λυκείου</subfield>
+	</datafield>
+	<datafield tag='606' ind1=' ' ind2=' '>
+		<subfield code='3'>ΤΜ ΠΛΗΡΟΦΟΡΙΑΚΟ (ΕΝΗΛΙΚΩΝ)</subfield>
+		<subfield code='a'>Τμ Πληροφοριακό (Ενηλίκων)</subfield>
+	</datafield>
+	<datafield tag='676' ind1=' ' ind2=' '>
+		<subfield code='a'>007</subfield>
+	</datafield>
+	<datafield tag='711' ind1='0' ind2='2'>
+		<subfield code='3'>ΜΦ</subfield>
+		<subfield code='4'>070</subfield>
+		<subfield code='a'>Μεθοδικό Φροντιστήριο</subfield>
+	</datafield>
+	<datafield tag='712' ind1='0' ind2='2'>
+		<subfield code='3'>ΜΦ</subfield>
+		<subfield code='4'>650</subfield>
+		<subfield code='a'>Μεθοδικό Φροντιστήριο</subfield>
+	</datafield>
+	<datafield tag='801' ind1=' ' ind2='0'>
+		<subfield code='a'>GR</subfield>
+		<subfield code='b'>ΔΗΜΟΣΙΑ ΚΕΝΤΡΙΚΗ ΒΙΒΛΙΟΘΗΚΗ ΛΕΒΑΔΕΙΑΣ</subfield>
+		<subfield code='c'>19991217</subfield>
+		<subfield code='g'>AACR2</subfield>
+	</datafield>
+	<datafield tag='911' ind1=' ' ind2=' '>
+		<subfield code='a'>23648</subfield>
+		<subfield code='e'>19991217</subfield>
+		<subfield code='n'>007 Ε</subfield>
+		<subfield code='p'>1</subfield>
+		<subfield code='q'>15</subfield>
+		<subfield code='r'>1</subfield>
+		<subfield code='s'>1</subfield>
+		<subfield code='z'>Δωρεά ΜΦ</subfield>
+	</datafield>
+	<datafield tag='911' ind1=' ' ind2=' '>
+		<subfield code='a'>23649</subfield>
+		<subfield code='e'>19991217</subfield>
+		<subfield code='n'>007 Ε</subfield>
+		<subfield code='p'>1</subfield>
+		<subfield code='q'>15</subfield>
+		<subfield code='r'>0</subfield>
+		<subfield code='s'>0</subfield>
+		<subfield code='z'>Δωρεά ΜΦ</subfield>
+	</datafield>
+	<datafield tag='911' ind1=' ' ind2=' '>
+		<subfield code='a'>23650</subfield>
+		<subfield code='e'>19991217</subfield>
+		<subfield code='n'>ΠΛ 007 Ε</subfield>
+		<subfield code='o'>Τμ Πληροφοριακό (Ενηλίκων)</subfield>
+		<subfield code='p'>0</subfield>
+		<subfield code='q'>0</subfield>
+		<subfield code='r'>0</subfield>
+		<subfield code='s'>0</subfield>
+		<subfield code='z'>Δωρεά ΜΦ</subfield>
+	</datafield>
+</record>
