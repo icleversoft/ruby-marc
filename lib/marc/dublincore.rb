@@ -76,17 +76,18 @@ require 'nokogiri'
                  'any' => [],
                  'type' => []
               }
-     
+    
+      xsl_file = File.dirname(__FILE__) + '/xsl/unimarc/unimarc2readable.xsl'
       record_xml = record.to_xml.to_s
-      record_xml.to_xml.gsub!(/\record.[^\>]+/, '<record')
+      record_xml.gsub!(/\<record.[^\>]+/, '<record')
 
       xml_doc = XML::Document.string( record_xml )
-      style_doc = XML::Document.file( 'xsl/unimarc/unimarc2readable.xsl' )
+      style_doc = XML::Document.file( xsl_file )
       stylesheet = LibXSLT::XSLT::Stylesheet.new( style_doc )
 
       #Apply StyleSheet
       out = stylesheet.apply( xml_doc )
-      noco_doc = Nokogiri::XML( out.to_s )
+      noko_doc = Nokogiri::XML( out.to_s )
 
       ident = noko_doc.search('identifier')
       date = noko_doc.search('date')
@@ -130,7 +131,7 @@ require 'nokogiri'
         #Subjects
         dc_hash['subject'] << field.inner_text.strip if (600..608).to_a.concat([610,615,620,661,670,680,686]).include?(field_code)
         #Description
-        dc_hash['description'] << field.inner_text.strip if [327, 330].include?( field.code ) 
+        dc_hash['description'] << field.inner_text.strip if [327, 330].include?( field_code ) 
       end #fields.each...
 
       #Remove Duplicates
