@@ -77,7 +77,7 @@ require 'nokogiri'
                  'type' => []
               }
      
-      record.xml.gsub!(/\record.[^\>]+/, '<record')
+      record.to_xml.gsub!(/\record.[^\>]+/, '<record')
 
       xml_doc = XML::Document.string( record )
       style_doc = XML::Document.file( 'xsl/unimarc/unimarc2readable.xsl' )
