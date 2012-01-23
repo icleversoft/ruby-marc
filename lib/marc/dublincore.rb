@@ -1,5 +1,5 @@
 module MARC
-include 'xslt'  
+require 'xslt'  
 require 'nokogiri'
   # A class for mapping MARC records to Dublin Core
   
