@@ -1,6 +1,6 @@
 module MARC
 include 'xslt'  
-include 'nokogiri'
+require 'nokogiri'
   # A class for mapping MARC records to Dublin Core
   
   class DublinCore
@@ -80,7 +80,7 @@ include 'nokogiri'
       record.xml.gsub!(/\record.[^\>]+/, '<record')
 
       xml_doc = XML::Document.string( record )
-      style_doc = XML::Document.file( 'unimarc2readable.xsl' )
+      style_doc = XML::Document.file( 'xsl/unimarc/unimarc2readable.xsl' )
       stylesheet = LibXSLT::XSLT::Stylesheet.new( style_doc )
 
       #Apply StyleSheet
