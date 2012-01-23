@@ -194,6 +194,11 @@ module MARC
       return MARC::DublinCore.map(self)
     end
 
+    #Returns a hash mapping the unimarc fields to Dublin Core
+    def to_unimarc_dc
+      return MARC::DublinCore.unimarcmap( self )
+    end
+
     # Return a marc-hash version of the record
     def to_marchash
       return {
