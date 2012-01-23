@@ -1,5 +1,6 @@
 module MARC
-  
+include 'xslt'  
+include 'nokogiri'
   # A class for mapping MARC records to Dublin Core
   
   class DublinCore
@@ -59,6 +60,86 @@ module MARC
       dc_hash
     end
       
+    def self.unimarcmap(record)
+      dc_hash = {'title' => [],
+                 'creator' => [],
+                 'subject' => [],
+                 'publisher' => [],
+                 'contributor' => [],
+                 'date' => [],
+                 'format' => [],
+                 'language' => [],
+                 'identifier' => [],
+                 'source' => [],
+                 'rights' => [],
+                 'extern' => [],
+                 'any' => [],
+                 'type' => []
+              }
+     
+      record.xml.gsub!(/\record.[^\>]+/, '<record')
+
+      xml_doc = XML::Document.string( record )
+      style_doc = XML::Document.file( 'unimarc2readable.xsl' )
+      stylesheet = LibXSLT::XSLT::Stylesheet.new( style_doc )
+
+      #Apply StyleSheet
+      out = stylesheet.apply( xml_doc )
+      noco_doc = Nokogiri::XML( out.to_s )
+
+      ident = noko_doc.search('identifier')
+      date = noko_doc.search('date')
+      type = noko_doc.search('type')
+      level = noko_doc.search('level')
+      lang = noko_doc.search('language')
+      fields = noko_doc.search('field')
+
+      dc_hash['identifier'] << ident.inner_text.strip
+      dc_hash['date'] << date.inner_text.strip unless date.nil?
+      dc_hash['type'] << "#{type.inner_text.strip} / #{level.inner_text.strip}"
+      dc_hash['language'] << lang.inner_text.strip unless type.nil?
+
+      fields.each do |field|
+        field_code = field.attr('code').to_i
+
+        case field_code
+        when 200
+          dc_hash['title'] << field.inner_text.strip
+        when 210
+          dc_hash['publisher'] << field.inner_text.strip
+        when 215
+          dc_hash['extern'] << field.inner_text.strip
+        when 676
+          dc_hash['subject'] << "#{field.inner_text.strip} (Dewey)"
+        end  #end case
+        #Creator/Publisher
+        if [700,701,702,710,711,712,720,721,722,730].include?(field_code)
+          sm = field.inner_text.strip.split('@')
+          if sm.size == 2
+            role = sm[1].to_i
+            if role.to_i == 650
+              dc_hash['publisher'] << sm[0].strip
+            else
+              dc_hash['creator'] << sm[0].strip
+            end
+          else
+            dc_hash['creator'] << sm[0].strip
+          end
+        end
+        #Subjects
+        dc_hash['subject'] << field.inner_text.strip if (600..608).to_a.concat([610,615,620,661,670,680,686]).include?(field_code)
+        #Description
+        dc_hash['description'] << field.inner_text.strip if [327, 330].include?( field.code ) 
+      end #fields.each...
+
+      #Remove Duplicates
+      dc_hash.keys.each do |key|
+        dc_hash[key].uniq!
+      end
+
+      dc_hash
+    end
+
     def self.get_field_value(field)
       return if field.nil?
       
