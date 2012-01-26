@@ -74,7 +74,8 @@ require 'nokogiri'
                  'rights' => [],
                  'extern' => [],
                  'any' => [],
-                 'type' => []
+                 'type' => [],
+                 'description' => []
               }
     
       xsl_file = File.dirname(__FILE__) + '/xsl/unimarc/unimarc2readable.xsl'
