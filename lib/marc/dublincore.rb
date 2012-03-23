@@ -82,8 +82,8 @@ require 'nokogiri'
       record_xml = record.to_xml.to_s
       record_xml.gsub!(/\<record.[^\>]+/, '<record')
       
-      record_xml.gsub!(/\eH/, '{'}
-      record_xml.gsub!(/\eI/, '}'}
+      record_xml.gsub!(/\eH/, '{')
+      record_xml.gsub!(/\eI/, '}')
       xml_doc = XML::Document.string( record_xml )
       style_doc = XML::Document.file( xsl_file )
       stylesheet = LibXSLT::XSLT::Stylesheet.new( style_doc )
